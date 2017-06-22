@@ -1,13 +1,21 @@
 package Plugin_mount
 
 import (
-	"errors"
-	log "github.com/Sirupsen/logrus"
-	"github.com/docker/go-plugins-helpers/volume"
-	"strings"
+        "errors"
+        "strings"
 )
 
 const (
-	ShareOpt  = "share"
-	CreateOpt = "create"
+        CreateOpt = "create"
+        path = "/tmp/mntdir1"
 )
+
+type mount struct {
+        name    string
+        hostdir string 
+        
+}
+
+func mountpath() {
+        return  path 
+}
