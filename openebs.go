@@ -6,7 +6,7 @@ type mount struct {
 }
 */
 
-func mountpath() string {
+func mount() string {
  	return ""  
 	
 }
