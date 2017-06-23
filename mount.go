@@ -75,12 +75,13 @@ func (m *mountManager) GetOptionAsBool(name, key string) bool {
 	}
 	return false
 }
-
+//to activate the  mount path 
 func (m *mountManager) IsActiveMount(name string) bool {
 	c, found := m.mounts[name]
 	return found && c.connections > 0
 }
 
+//to count the no of  mount that is seen 
 func (m *mountManager) Count(name string) int {
 	c, found := m.mounts[name]
 	if found {
@@ -88,7 +89,7 @@ func (m *mountManager) Count(name string) int {
 	}
 	return 0
 }
-
+// add a path which is recieved through the command arguments 
 func (m *mountManager) Add(name, hostdir string) {
 	_, found := m.mounts[name]
 	if found {
@@ -97,7 +98,7 @@ func (m *mountManager) Add(name, hostdir string) {
 		m.mounts[name] = &mount1{name: name, hostdir: hostdir, managed: false, connections: 1}
 	}
 }
-
+// to create the 
 func (m *mountManager) Create(name, hostdir string, opts map[string]string) *mount1 {
 	c, found := m.mounts[name]
 	if found && c.connections > 0 {
