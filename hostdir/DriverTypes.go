@@ -3,10 +3,8 @@ package drivers
 type DriverType int
 
 const (
-	CIFS DriverType = iota
-	NFS
-	EFS
-	CEPH
+	Host
+	OPENEBS
 )
 
 var driverTypes = []string{
